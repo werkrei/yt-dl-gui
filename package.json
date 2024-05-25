@@ -1,0 +1,29 @@
+{
+  "name": "yt-dl-gui",
+  "version": "0.0.1",
+  "config":{
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@werkrei"
+        }
+      ]
+    }
+  },
+  "description": "A simple GUI app for yt-dl",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon --watch main.js --exec npm start",
+    "start": "electron ."
+  },
+  "author": "Clamor_ on Discord",
+  "license": "ISC",
+  "dependencies": {
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "electron": "^30.0.7"
+  }
+}

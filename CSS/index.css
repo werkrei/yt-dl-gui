@@ -1,0 +1,11 @@
+*{margin:0; padding:0; color: white;background-color:#402d7d; font-family:Verdana, Geneva, Tahoma, sans-serif}
+body{width:100%; height:100%;background-image:url(../Asseys/IMG_6789.jpg);background-size:15%;background-repeat: repeat; position: absolute; z-index:0}
+.header{width:100%; height:10%; border-bottom: 0.25em solid rgb(0, 0, 133); z-index:2; box-shadow: 0 0.5em 1em 0.1em black;}
+.header h1 {margin:auto; text-align:center}
+.content {width:85%; height:90%; margin:auto; z-index:1; box-shadow: 0 0.5em 1em 0.1em black; padding-top:5%; overflow:hidden;}
+.submissive{width:100%; height:60%;}
+.submissive div{margin-top:2% !important;}
+.demeantheurl{margin:auto; width: fit-content; height:5%; right:0px; position:static; z-index:3;}
+.thejuicyurl{margin:auto; width:fit-content; height:5%; right:0px; position:static; z-index:3;}
+.thejuicyurl input{width:100%; height:100%;}
+.thebutt{margin:auto; width: fit-content; height:5%; right:0px; position:static; z-index:3;}
