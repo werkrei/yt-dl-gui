@@ -1,7 +1,7 @@
 {
   "name": "yt-dl-gui",
   "version": "0.0.1",
-  "config":{
+  "config": {
     "forge": {
       "packagerConfig": {},
       "makers": [
@@ -20,6 +20,7 @@
   "author": "Clamor_ on Discord",
   "license": "ISC",
   "dependencies": {
+    "request": "^2.88.2",
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {

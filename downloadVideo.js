@@ -10,10 +10,9 @@ module.exports = {
     if (ytdl.validateURL(url)){
       console.log("Starting download of " + url)
       ytdl.getInfo(url).then(info => {
-        console.log(info.videoDetails.title)
         var title = info.videoDetails.title
-        ytdl(url)
-          .pipe(fs.createWriteStream(downloadsFolder +"/"+title + '.mp4'))
+        //ytdl(url)
+        //  .pipe(fs.createWriteStream(downloadsFolder +"/"+title + '.mp4'))
       })
       }
     //ytdl(url)
