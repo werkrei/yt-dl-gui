@@ -12,11 +12,7 @@ titlenthumb = new Array
 //ipcMain.on('thumbChannel', (event, link) => {vidThumb(link); console.log(vidThumb(link) + 'thumb')})
 
 async function asyncSet(x){
-  try {
     title = await vidTitle(x)
-  } catch (error) {
-    console.log(error + 'title error')
-  }
     vidthumb = await vidThumb(x)
     titlenthumb = [title, vidthumb]
     win.webContents.send("D", titlenthumb)
@@ -27,6 +23,7 @@ const createWindow = () => {
       height: 720,
       webPreferences: {
         nodeIntegration: true,
+        frame: false,
         preload: path.join(__dirname, 'preload.js')
       }
     })
@@ -46,20 +43,12 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
   })
 
-  ipcMain.on('urlChannel', (event, link) => {if(event = "click")downLink = link; console.log(downLink); down.down(link)})
-    ipcMain.on('urlChannel', (event, link) => {downLink = link; /*console.log(downLink + 'received');*/})
+  ipcMain.on('urlChannel', (event, link) => {if(event = "click"){downLink = link; console.log(downLink); down.down(link)}})
+  ipcMain.on('urlChannel', (event, link) => {downLink = link; /*console.log(downLink + 'received');*/})
 
   ipcMain.on("A", (evt) =>{
     console.log(downLink+"  yes")
 
     asyncSet(downLink)
-    /*vidtitle = vidTitle(downLink)
-    vidthumb = vidThumb(downLink)
-    try {
-      console.log(vidtitle +""+ vidthumb)
-      
-    } catch (error) {
-      console.log(error)
-    }*/
 
   })

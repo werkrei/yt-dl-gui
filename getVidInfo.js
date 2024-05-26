@@ -25,11 +25,12 @@ function getThumb(url){
     return new Promise((resolve) => {
         ytdl.getInfo(url).then(info => {
             var thumbPath = info.videoDetails.thumbnails[3]
-            cachedThumb = temp + "/" + info.videoDetails.title + ".png"
+            var truncTitle = info.videoDetails.title
+            cachedThumb = path.join(temp, truncTitle + '.png')
             request.head(thumbPath, function(err,res,body){
                 request(thumbPath).pipe(fs.createWriteStream(cachedThumb))
             })
-             resolve(cachedThumb)   //fs.createWriteStream(thumbPath+".png")
+             resolve(cachedThumb)
         });
     })
 }

@@ -1,5 +1,3 @@
-window.onload = (event) => {
-}
 function replaceInfo(array){
 document.getElementById('thumbn').src=array[1]
 document.getElementById('vidtitle').innerHTML=array[0]
@@ -22,7 +20,9 @@ link = document.getElementById("juicy").value
 window.urldata.senderUrl(link)
 window.api.sendData()
 window.api.receiveData((events, data) => {
-    replaceInfo(data)
+    setTimeout(() => {
+        replaceInfo(data)
+    }, 750);
     })
 })
 

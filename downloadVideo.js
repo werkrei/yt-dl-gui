@@ -11,8 +11,8 @@ module.exports = {
       console.log("Starting download of " + url)
       ytdl.getInfo(url).then(info => {
         var title = info.videoDetails.title
-        //ytdl(url)
-        //  .pipe(fs.createWriteStream(downloadsFolder +"/"+title + '.mp4'))
+        ytdl(url)
+          .pipe(fs.createWriteStream(downloadsFolder +"/"+title + '.mp4'))
       })
       }
     //ytdl(url)
